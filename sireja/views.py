@@ -1,5 +1,4 @@
 import gspread
-from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 from django.shortcuts import render
 from django.conf import settings
@@ -49,61 +48,50 @@ def reserveDesk(request):
     token = request.POST.get('token', '').strip().lower()
     desk = request.POST.get('desk', '').strip().lower()
 
-    response = {}  # Variabel tunggal untuk menyimpan hasil eksekusi
+    # Validasi token dan desk
+    if not token or not desk:
+        response = {
+            'message': 'Token atau desk tidak boleh kosong',
+            'status': 'error',
+            'penghuni_data': penghuni_data
+        }
+    elif token in token_dict:
+        # Ambil nama penghuni dari token
+        namapenghuni = token_dict[token]
 
-    now = datetime.now()
-    # Periksa apakah waktu saat ini berada di antara 07:00 - 13:00 WIB
-    if (7 <= now.hour < 16):
-        # Validasi token dan desk
-        if not token or not desk:
+        # Periksa apakah nama penghuni sudah ada di kolom "Penghuni"
+        if namapenghuni in penghuni_data.values():
             response = {
-                'message': 'Token atau desk tidak boleh kosong',
+                'message': f'Reservasi ditolak. {namapenghuni} sudah memiliki meja.',
                 'status': 'error',
                 'penghuni_data': penghuni_data
             }
-        elif token in token_dict:
-            # Ambil nama penghuni dari token
-            namapenghuni = token_dict[token]
+        else:
+            # Lanjutkan jika nama belum ada di kolom "Penghuni"
+            try:
+                # Temukan cell meja dan perbarui penghuni
+                cell = worksheet_meja.find(desk)
+                row = cell.row
+                worksheet_meja.update_cell(row, 2, namapenghuni)  # Column B is the 2nd column
 
-            # Periksa apakah nama penghuni sudah ada di kolom "Penghuni"
-            if namapenghuni in penghuni_data.values():
+                # Perbarui penghuni_data setelah perubahan
+                data_meja = worksheet_meja.get_all_records()
+                penghuni_data = {row['Nama_meja']: row['Penghuni'] for row in data_meja}
+
                 response = {
-                    'message': f'Reservasi ditolak. {namapenghuni} sudah memiliki meja.',
+                    'message': 'Token valid, penghuni berhasil diperbarui',
+                    'status': 'success',
+                    'penghuni_data': penghuni_data
+                }
+            except gspread.exceptions.CellNotFound:
+                response = {
+                    'message': 'Nama meja tidak ditemukan',
                     'status': 'error',
                     'penghuni_data': penghuni_data
                 }
-            else:
-                # Lanjutkan jika nama belum ada di kolom "Penghuni"
-                try:
-                    # Temukan cell meja dan perbarui penghuni
-                    cell = worksheet_meja.find(desk)
-                    row = cell.row
-                    worksheet_meja.update_cell(row, 2, namapenghuni)  # Column B is the 2nd column
-
-                    # Perbarui penghuni_data setelah perubahan
-                    data_meja = worksheet_meja.get_all_records()
-                    penghuni_data = {row['Nama_meja']: row['Penghuni'] for row in data_meja}
-
-                    response = {
-                        'message': 'Token valid, penghuni berhasil diperbarui',
-                        'status': 'success',
-                        'penghuni_data': penghuni_data
-                    }
-                except gspread.exceptions.CellNotFound:
-                    response = {
-                        'message': 'Nama meja tidak ditemukan',
-                        'status': 'error',
-                        'penghuni_data': penghuni_data
-                    }
-        else:
-            response = {
-                'message': 'Token tidak ditemukan',
-                'status': 'error',
-                'penghuni_data': penghuni_data
-            }
-    else: 
+    else:
         response = {
-            'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 - 16:00 WIB',
+            'message': 'Token tidak ditemukan',
             'status': 'error',
             'penghuni_data': penghuni_data
         }
