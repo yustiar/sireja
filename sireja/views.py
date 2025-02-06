@@ -1,5 +1,4 @@
 import gspread
-import pytz
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 from django.shortcuts import render
@@ -52,9 +51,7 @@ def reserveDesk(request):
 
     response = {}  # Variabel tunggal untuk menyimpan hasil eksekusi
 
-    wib = pytz.timezone("Asia/Jakarta")
-    now = datetime.now(wib)
-    
+    now = datetime.now()
     # Periksa apakah waktu saat ini berada di antara 07:00 - 13:00 WIB
     if (7 <= now.hour < 16):
         # Validasi token dan desk
