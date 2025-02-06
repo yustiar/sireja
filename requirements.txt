@@ -1,11 +1,1 @@
-Django==5.1.4
-google-api-core==2.24.0
-google-api-python-client==2.159.0
-google-auth==2.37.0
-google-auth-httplib2==0.2.0
-google-auth-oauthlib==1.2.1
-googleapis-common-protos==1.66.0
-pandas==2.2.3
-pygsheets==2.0.6
-pytz==2024.2
-requests==2.32.3
+
