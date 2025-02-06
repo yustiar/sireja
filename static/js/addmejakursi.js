@@ -12,11 +12,11 @@
         //pst
         { coords: [135, 24], imageUrl: `${staticUrl}mejapanjangatas.png`, width: 18, height: 6 },
         
-    //IPDS
+   //IPDS
         //ipds1
-        { coords: [91, 49], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
+        { coords: [91, 49], imageUrl: `${staticUrl}mejacubipds1.png`, width: 12, height: 12 },
         //ipds2
-        { coords: [104, 49], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [104, 49], imageUrl: `${staticUrl}mejacubipds2.png`, width: 12, height: 12 },
         //ipds3
         { coords: [117, 46], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
         //ipds4
