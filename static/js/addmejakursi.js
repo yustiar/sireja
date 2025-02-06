@@ -156,13 +156,13 @@
 
     //Cubicle Teknis Group 3
         //teknis17
-        { coords: [27, 217], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
+        { coords: [27, 216], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
         //teknis18
-        { coords: [27, 229], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
+        { coords: [27, 228], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
         //teknis19
-        { coords: [39, 229], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [39, 228], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
         //teknis20
-        { coords: [39, 217], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },  
+        { coords: [39, 216], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },  
     
     //Cubicle Teknis Group 4
         //teknis21
@@ -236,28 +236,28 @@
 
     //Cubicle Teknis
         //Cubicle Teknis Grup 1
-        { coords: [25, 150], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
-        { coords: [25, 168], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 168], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 150], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [24, 150], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 166], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 166], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 150], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 2
-        { coords: [25, 177], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
-        { coords: [25, 195], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 195], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 177], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [24, 178], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 194], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 194], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 178], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 3
-        { coords: [25, 214], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
-        { coords: [25, 232], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 232], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 214], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [24, 214], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 230], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 230], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 214], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 4
-        { coords: [25, 241], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
-        { coords: [25, 259], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 259], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        { coords: [41, 240], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [24, 242], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 258], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 258], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 242], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         
     ];
 
