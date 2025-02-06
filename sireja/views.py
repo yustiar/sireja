@@ -1,13 +1,29 @@
 import gspread
+import os
+import json
+import base64
+
 from oauth2client.service_account import ServiceAccountCredentials
 from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
+from google.oauth2.service_account import Credentials
+
+
+# Ambil service account key dari environment variable
+service_account_key_base64 = os.getenv("GOOGLE_SERVICE_ACCOUNT_KEY")
+
+if service_account_key_base64:
+    service_account_json = base64.b64decode(service_account_key_base64).decode("utf-8")
+    service_account_info = json.loads(service_account_json)
+else:
+    service_account_info = None
 
 def index(request):
     # Define the scope and credentials for Google Sheets access
     scope = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(settings.GOOGLE_SHEET_CREDENTIALS_PATH, scope)
+    if service_account_info:
+        credentials = Credentials.from_service_account_info(service_account_info)   
     gc = gspread.authorize(credentials)
 
     # Open the spreadsheet by key
