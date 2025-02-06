@@ -2,6 +2,8 @@ import os
 import json
 import base64
 import gspread
+import pytz
+
 from google.oauth2.service_account import Credentials
 from django.shortcuts import render
 from django.http import JsonResponse
@@ -32,6 +34,7 @@ def index(request):
     return render(request, 'index.html', {'penghuni_data': penghuni_data})
 
 def reserveDesk(request):
+    
     credentials = get_google_credentials()
     if not credentials:
         return JsonResponse({'message': 'Google credentials tidak ditemukan.', 'status': 'error'})
@@ -48,6 +51,20 @@ def reserveDesk(request):
     
     token = request.POST.get('token', '').strip().lower()
     desk = request.POST.get('desk', '').strip().lower()
+
+    wib = pytz.timezone("Asia/Jakarta")
+    now = datetime.now(wib)
+    
+    # Periksa apakah waktu saat ini berada di antara 07:00 - 13:00 WIB
+    if not (7 <= now.hour < 13):
+        return JsonResponse({
+            'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 - 13:00 WIB',
+            'status': 'error',
+            'penghuni_data': penghuni_data
+        })
+
+    response = {}  # Variabel tunggal untuk menyimpan hasil eksekusi
+
     
     if not token or not desk:
         return JsonResponse({'message': 'Token atau desk tidak boleh kosong', 'status': 'error', 'penghuni_data': penghuni_data})
