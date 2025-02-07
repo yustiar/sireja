@@ -304,6 +304,7 @@
                 })
                 .on('mouseover', function () {
                     this.setStyle(currentHighlight);
+                    this.bringToFront();
                 })
                 .on('mouseout', function () {
                     const finalStyle = desk.occupant === null ? styles.deskarea : styles.booked;
