@@ -1,3 +1,4 @@
 Django==5.1.4
 gspread==6.1.4
 whitenoise==6.7.0
+oauth2client==4.1.3
