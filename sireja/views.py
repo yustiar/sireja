@@ -2,9 +2,13 @@ import os
 import json
 import base64
 import gspread
+
 from google.oauth2.service_account import Credentials
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.utils import timezone
+from zoneinfo import ZoneInfo
+
 
 # Fungsi untuk mendapatkan credentials dari environment variable
 def get_google_credentials():
@@ -32,6 +36,13 @@ def index(request):
     return render(request, 'index.html', {'penghuni_data': penghuni_data})
 
 def reserveDesk(request):
+    # Ambil waktu sekarang dalam timezone Asia/Jakarta
+    now = timezone.now().astimezone(ZoneInfo("Asia/Jakarta"))
+    
+    # Batasi reservasi hanya antara 07:00 hingga 13:00
+    if not (7 <= now.hour < 13):
+        return JsonResponse({'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 hingga 13:00.', 'status': 'error'})
+
     credentials = get_google_credentials()
     if not credentials:
         return JsonResponse({'message': 'Google credentials tidak ditemukan.', 'status': 'error'})
