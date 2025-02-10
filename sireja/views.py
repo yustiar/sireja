@@ -36,13 +36,6 @@ def index(request):
     return render(request, 'index.html', {'penghuni_data': penghuni_data})
 
 def reserveDesk(request):
-    # Ambil waktu sekarang dalam timezone Asia/Jakarta
-    now = timezone.now().astimezone(ZoneInfo("Asia/Jakarta"))
-    
-    # Batasi reservasi hanya antara 07:00 hingga 13:00
-    if not (7 <= now.hour < 13):
-        return JsonResponse({'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 hingga 13:00.', 'status': 'error'})
-
     credentials = get_google_credentials()
     if not credentials:
         return JsonResponse({'message': 'Google credentials tidak ditemukan.', 'status': 'error'})
@@ -59,6 +52,12 @@ def reserveDesk(request):
     
     token = request.POST.get('token', '').strip().lower()
     desk = request.POST.get('desk', '').strip().lower()
+    
+    
+    now = timezone.now().astimezone(ZoneInfo("Asia/Jakarta"))
+    if not (7 <= now.hour < 13):
+        return JsonResponse({'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 hingga 13:00.', 'status': 'error', 'penghuni_data': penghuni_data})
+
     
     if not token or not desk:
         return JsonResponse({'message': 'Token atau desk tidak boleh kosong', 'status': 'error', 'penghuni_data': penghuni_data})
