@@ -292,7 +292,7 @@
             const currentHighlight = desk.occupant === null ? styles.highlight : styles.highlightbooked;
             const tooltipContent = desk.occupant === null 
                 ? desk.label 
-                : `${desk.label} ~ <strong>${desk.occupant}</strong>`;
+                : `${desk.label} : <strong>${desk.occupant}</strong>`;
 
             // Membuat polygon untuk meja
             const polygon = L.polygon(desk.coords, currentStyle)
@@ -443,7 +443,7 @@
                                         // Update tooltip content
                                         const newTooltipContent = area.occupant === null
                                             ? area.label
-                                            : `${desk.label} ~ <strong>${desk.occupant}</strong>`;
+                                            : `${desk.label} : <strong>${desk.occupant}</strong>`;
                                         layer.setTooltipContent(newTooltipContent); // Update tooltip
                                     }
                                 }
