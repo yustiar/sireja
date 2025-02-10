@@ -74,8 +74,8 @@
             deskarea: { color: '#c6cc18', opacity: 1, weight: 2, fillColor: '#ffffc4', fillOpacity: 1 },
             booked: { color: '#148f29', opacity: 1, weight: 3, fillColor: '#22d437', fillOpacity: 1 },
             highlight: { color: '#000480', weight: 12, opacity: 1},
-            highlightbooked: { color: '#000480', weight: 12, opacity: 1 } // Gaya untuk meja yang sudah terbooking
-
+            highlightbooked: { color: '#000480', weight: 12, opacity: 1 }, // Gaya untuk meja yang sudah terbooking
+            unusedspace: { color: '#6e6e6e', opacity: 0.6, weight: 2, fillColor: '#6e6e6e', fillOpacity: 0.6 },
         };
 
         // Fungsi untuk membuat poligon Leaflet
@@ -155,6 +155,19 @@
             styles.wall
         );
 
+
+        const L1rooms = L.polygon(
+                [
+                    [[84,0], [84,42], [150,42], [150,0]],
+                    [[0,0], [0,120], [150,120], [150,96], [132,96], [132,84], [84,84], [84,0]],
+                ],
+            styles.unusedspace);
+        const L2rooms = L.polygon(
+                [
+                    [[54,180], [54,264], [150,264], [150,228], [84,228], [84,180]],
+                ],
+            styles.unusedspace);
+        
         // Polygon pintu lantai 1
         const L1door = createPolyline(
             [
@@ -349,9 +362,13 @@
 
 
         // Gabungan layer lantai 1
-        const L1 = L.layerGroup([L1footprint, L1door, L1wall, L1table, L1chair,
+        const L1 = L.layerGroup([L1footprint, L1rooms, L1door, L1wall, L1table, L1chair,
                         ]);
-        const L2 = L.layerGroup([L2footprint, L2door, L2wall, L2table, L2chair,]);
+        const L2 = L.layerGroup([L2footprint, L2rooms, L2door, L2wall, L2table, L2chair,]);
+
+
+
+
 
 
 
