@@ -73,8 +73,8 @@
             door: { color: '#b8b8b8', opacity: 1, weight: 2, fillColor: 'none', fillOpacity: 1 },
             deskarea: { color: '#c6cc18', opacity: 1, weight: 2, fillColor: '#ffffc4', fillOpacity: 1 },
             booked: { color: '#148f29', opacity: 1, weight: 3, fillColor: '#22d437', fillOpacity: 1 },
-            highlight: { color: '#000480', weight: 15, opacity: 1},
-            highlightbooked: { color: '#000480', weight: 15, opacity: 1 } // Gaya untuk meja yang sudah terbooking
+            highlight: { color: '#000480', weight: 12, opacity: 1},
+            highlightbooked: { color: '#000480', weight: 12, opacity: 1 } // Gaya untuk meja yang sudah terbooking
 
         };
 
@@ -207,7 +207,8 @@
         map.createPane('tooltipPane');
         map.getPane('tooltipPane').style.zIndex = 1000;
 
-
+        map.createPane('highlightPane');
+        map.getPane('highlightPane').style.zIndex = 900; 
 
 
     //Poligon Area Reservasi Bangku
@@ -362,8 +363,31 @@
         map.addLayer(L2);
         map.addLayer(deskLayer);
 
-        map.setView([75, 132], 2);
+        map.setView([75, 160], 2);
+        L.Control.legend = L.Control.extend({
+            onAdd: function(map) {
+                var div = L.DomUtil.create('div', 'map-legend leaflet-control');
+                div.innerHTML = `
+                    <h3>Sireja (Sistem Reservasi Meja Kantor)</h3>
+                    <p><strong>Cara Melakukan Reservasi:</strong></p>
+                    <ol>
+                        <li>Arahkan cursor/Pilih pada meja yang tersedia untuk di reservasi(area kuning)</li>
+                        <li>Area meja yang berwarna hijau berarti sudah ada pegawai yang mereservasi meja tersebut</li>
+                        <li>Masukkan token reservasi (setiap pegawai memiliki token sendiri-sendiri)</li>
+                        <li>Klik tombol "Reservasi" untuk melakukan reservasi meja</li>
+                        <li>Reservasi hanya bisa dilakukan pada rentang waktu 07.00-13.00 WIB</li>
+                    </ol>
+                `;
+                return div;
+            },
 
+            onRemove: function(map) {
+                // Tidak perlu melakukan apa-apa saat dihapus
+            }
+        });
+
+        L.control.legend = function(opts) { return new L.Control.legend(opts);}
+        L.control.legend({ position: 'topright' }).addTo(map);
 
     // Event klik pada tombol reservasi
         $(document).on('click', '#reserveButton', function () {
