@@ -195,7 +195,8 @@
         // Buat pane khusus untuk gambar meja
         const map = L.map('map', {
             crs: L.CRS.Simple,
-            minZoom: 0
+            minZoom: 0,
+            maxZoom: 4
         });
 
         map.createPane('tablePane');
