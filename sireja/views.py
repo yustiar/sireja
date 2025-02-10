@@ -56,7 +56,7 @@ def reserveDesk(request):
     
     now = timezone.now().astimezone(ZoneInfo("Asia/Jakarta"))
     if not (7 <= now.hour < 13):
-        return JsonResponse({'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 hingga 13:00.', 'status': 'error', 'penghuni_data': penghuni_data})
+        return JsonResponse({'message': 'Reservasi hanya dapat dilakukan antara pukul 07:00 hingga 13:00 WIB.', 'status': 'error', 'penghuni_data': penghuni_data})
 
     
     if not token or not desk:
