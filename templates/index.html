@@ -40,7 +40,7 @@
     </div>
 
 
-    <!--<div id="coordinates">Hover over the map to see coordinates.</div>-->
+    <!-- <div id="coordinates">Hover over the map to see coordinates.</div> -->
 
     <div id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
@@ -75,7 +75,7 @@
             booked: { color: '#148f29', opacity: 1, weight: 3, fillColor: '#22d437', fillOpacity: 1 },
             highlight: { color: '#000480', weight: 12, opacity: 1},
             highlightbooked: { color: '#000480', weight: 12, opacity: 1 }, // Gaya untuk meja yang sudah terbooking
-            unusedspace: { color: '#6e6e6e', opacity: 0.6, weight: 2, fillColor: '#6e6e6e', fillOpacity: 0.6 },
+            unusedspace: { color: '#9c9c9c', opacity: 1, weight: 2, fillColor: '#9c9c9c', fillOpacity: 1 },
         };
 
         // Fungsi untuk membuat poligon Leaflet
@@ -156,13 +156,30 @@
         );
 
 
-        const L1rooms = L.polygon(
+        const L1pst = L.polygon(
+                [[84,0], [84,42], [150,42], [150,0]],
+            styles.unusedspace).bindTooltip("Ruang PST", {permanent: true, direction:"center", className: 'roomstooltip'});
+
+        const L1ipds = L.polygon(
+                [[84,42], [84,84], [150,84], [150,42]],
+            styles.footprint).bindTooltip("Ruang IPDS", {permanent: true, direction:"center", className: 'roomstooltip'});
+
+        const L2tu = L.polygon(
+                [[84,144], [84,228], [150,228], [150,144]],
+            styles.footprint).bindTooltip("Ruang Tata Usaha", {permanent: true, direction:"left", className: 'roomstooltip'});
+
+        const L2teknis = L.polygon(
+                [[0,144], [0,264], [54,264], [54,180], [84,180], [84,144]],
+            styles.footprint).bindTooltip("Ruang Teknis", {permanent: true, direction:"center", className: 'roomstooltip'});
+
+
+        const L1unused = L.polygon(
                 [
                     [[84,0], [84,42], [150,42], [150,0]],
                     [[0,0], [0,120], [150,120], [150,96], [132,96], [132,84], [84,84], [84,0]],
                 ],
             styles.unusedspace);
-        const L2rooms = L.polygon(
+        const L2unused = L.polygon(
                 [
                     [[54,180], [54,264], [150,264], [150,228], [84,228], [84,180]],
                 ],
@@ -205,6 +222,14 @@
             styles.door
         );
 
+
+         // Gabungan layer lantai 1
+        const L1 = L.layerGroup([L1footprint, L1unused, L1pst, L1ipds, L1door, L1wall, L1table, L1chair,
+                        ]);
+        const L2 = L.layerGroup([L2footprint, L2unused, L2tu, L2teknis, L2door, L2wall, L2table, L2chair,]);
+
+
+
         // Buat pane khusus untuk gambar meja
         const map = L.map('map', {
             crs: L.CRS.Simple,
@@ -228,7 +253,7 @@
     //Poligon Area Reservasi Bangku
     //IPDS
         const deskAreas = [
-            { coords: [[84.5, 42.6], [84.5, 55.5], [97.5, 55.5], [97.5, 42.5]], label: "ipds-1", occupant: null },
+            { coords: [[84.5, 42.5], [84.5, 55.5], [97.5, 55.5], [97.5, 42.5]], label: "ipds-1", occupant: null },
             { coords: [[97.5, 42.5], [110.5, 42.5], [110.5, 55.5], [97.5, 55.5]], label: "ipds-2", occupant: null },
             { coords: [[110.5, 42.5], [123.5, 42.5], [123.5, 55.5], [110.5, 55.5]], label: "ipds-3", occupant: null },
             { coords: [[123.5, 42.5], [136.5, 42.5], [136.5, 55.5], [123.5, 55.5]], label: "ipds-4", occupant: null },
@@ -361,12 +386,7 @@
 
 
 
-        // Gabungan layer lantai 1
-        const L1 = L.layerGroup([L1footprint, L1rooms, L1door, L1wall, L1table, L1chair,
-                        ]);
-        const L2 = L.layerGroup([L2footprint, L2rooms, L2door, L2wall, L2table, L2chair,]);
-
-
+       
 
 
 
@@ -509,7 +529,7 @@
         }
 
 
-        // Ambil elemen untuk menampilkan koordinat
+        // // Ambil elemen untuk menampilkan koordinat
         // var coordinatesDiv = document.getElementById('coordinates');
 
         // // Event listener untuk mendapatkan koordinat saat kursor bergerak
