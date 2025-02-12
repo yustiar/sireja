@@ -19,6 +19,17 @@ html, body {
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     z-index: 1000; /* Pastikan tooltip tetap di atas */
 }
+.roomstooltip {
+    background-color: white;
+    color: #0a4980;
+    font-weight: bold;
+    border: 0px;
+    box-shadow: 0px ;
+    padding: 4px 4px;
+    font-size: 9px;
+}
+
+
 
 #coordinates {
     margin-top: 10px;
@@ -62,6 +73,7 @@ html, body {
     transform: rotate(360deg);
   }
 }
+
 
 .map-legend {
     background: rgba(255, 255, 255, 0.9) !important;
