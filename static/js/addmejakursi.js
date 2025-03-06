@@ -14,17 +14,19 @@
         
    //IPDS
         //ipds1
-        { coords: [91, 49], imageUrl: `${staticUrl}mejacubipds1.png`, width: 12, height: 12 },
+        { coords: [91.5, 46], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
         //ipds2
-        { coords: [104, 49], imageUrl: `${staticUrl}mejacubipds2.png`, width: 12, height: 12 },
+        { coords: [106.5, 46], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
         //ipds3
-        { coords: [117, 46], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
+        { coords: [121.5, 46], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
         //ipds4
-        { coords: [130, 46], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
-        //ipds5
         { coords: [140, 63], imageUrl: `${staticUrl}mejabawah.png`, width: 12, height: 6 },
-        //ipds6
+        //ipds5
         { coords: [140, 76], imageUrl: `${staticUrl}mejabawah.png`, width: 12, height: 6 },
+        //ipds6
+        { coords: [123.5, 79.5], imageUrl: `${staticUrl}mejakiri.png`, width: 6, height: 12 },
+
+
         //server
         { coords: [146, 90], imageUrl: `${staticUrl}server.png`, width: 11, height: 6 },
 
@@ -52,19 +54,20 @@
         { coords: [141, 24], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //ipds1
-        { coords: [89, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [91, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
         //ipds2
         { coords: [106, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
         //ipds3
-        { coords: [117, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [121, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
         //ipds4
-        { coords: [130, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        //ipds5
         { coords: [146, 63], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        //ipds6
+        //ipds5
         { coords: [146, 76], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        //ipds6
+        { coords: [123.5, 73.5], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
         //server
         { coords: [140, 90], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        
     ];
 
 
@@ -236,28 +239,28 @@
 
     //Cubicle Teknis
         //Cubicle Teknis Grup 1
-        { coords: [25, 149], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [25, 167], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [41, 167], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        { coords: [41, 149], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [24, 149], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 166], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 166], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 149], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 2
-        { coords: [25, 177], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [25, 195], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [41, 195], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        { coords: [41, 177], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [24, 178], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 194], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 194], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 178], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 3
-        { coords: [25, 213], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [25, 231], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [41, 231], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        { coords: [41, 213], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [24, 214], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 230], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 230], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 214], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 4
-        { coords: [25, 241], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [25, 259], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
-        { coords: [41, 259], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        { coords: [41, 241], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [24, 242], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 258], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [42, 258], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 242], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         
     ];
 
