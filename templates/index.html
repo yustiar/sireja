@@ -40,7 +40,7 @@
     </div>
 
 
-    <div id="coordinates">Hover over the map to see coordinates.</div>
+    <!--<div id="coordinates">Hover over the map to see coordinates.</div>-->
 
     <div id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
@@ -530,19 +530,19 @@
 
 
         // Ambil elemen untuk menampilkan koordinat
-        var coordinatesDiv = document.getElementById('coordinates');
+        //var coordinatesDiv = document.getElementById('coordinates');
 
         // Event listener untuk mendapatkan koordinat saat kursor bergerak
-        map.on('mousemove', function(e) {
-            var lat = e.latlng.lat.toFixed(5);
-            var lng = e.latlng.lng.toFixed(5);
-            coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
-        });
+        //map.on('mousemove', function(e) {
+        //    var lat = e.latlng.lat.toFixed(5);
+        //    var lng = e.latlng.lng.toFixed(5);
+        //    coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
+        //});
 
         // Tambahkan teks default saat kursor tidak di atas peta
-        map.on('mouseout', function() {
-            coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
-        });
+        //map.on('mouseout', function() {
+        //    coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
+        //});
     </script>
 
 
