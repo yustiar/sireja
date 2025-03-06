@@ -40,7 +40,7 @@
     </div>
 
 
-    <!-- <div id="coordinates">Hover over the map to see coordinates.</div> -->
+    <div id="coordinates">Hover over the map to see coordinates.</div>
 
     <div id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
@@ -253,12 +253,12 @@
     //Poligon Area Reservasi Bangku
     //IPDS
         const deskAreas = [
-            { coords: [[84.5, 42.5], [84.5, 55.5], [97.5, 55.5], [97.5, 42.5]], label: "ipds-1", occupant: null },
-            { coords: [[97.5, 42.5], [110.5, 42.5], [110.5, 55.5], [97.5, 55.5]], label: "ipds-2", occupant: null },
-            { coords: [[110.5, 42.5], [123.5, 42.5], [123.5, 55.5], [110.5, 55.5]], label: "ipds-3", occupant: null },
-            { coords: [[123.5, 42.5], [136.5, 42.5], [136.5, 55.5], [123.5, 55.5]], label: "ipds-4", occupant: null },
-            { coords: [[136.5, 56.5], [136.5, 69.5], [149.5, 69.5], [149.5, 56.5]], label: "ipds-5", occupant: null },
-            { coords: [[136.5, 69.5], [136.5, 82.5], [149.5, 82.5], [149.5, 69.5]], label: "ipds-6", occupant: null },
+            { coords: [[85, 42.5], [85, 55.5], [98, 55.5], [98, 42.5]], label: "ipds-1", occupant: null },
+            { coords: [[100, 42.5], [113, 42.5], [113, 55.5], [100, 55.5]], label: "ipds-2", occupant: null },
+            { coords: [[115, 42.5], [128, 42.5], [128, 55.5], [115, 55.5]], label: "ipds-3", occupant: null },
+            { coords: [[136.5, 56.5], [136.5, 69.5], [149.5, 69.5], [149.5, 56.5]], label: "ipds-4", occupant: null },
+            { coords: [[136.5, 69.5], [136.5, 82.5], [149.5, 82.5], [149.5, 69.5]], label: "ipds-5", occupant: null },
+            { coords: [[117, 70], [117, 83], [130, 83], [130, 70]], label: "ipds-6", occupant: null },
 
             // Teknis Selatan
             { coords: [[0.5, 145], [13.5, 145], [13.5, 158], [0.5, 158]], label: "teknis-1", occupant: null },
@@ -529,20 +529,20 @@
         }
 
 
-        // // Ambil elemen untuk menampilkan koordinat
-        // var coordinatesDiv = document.getElementById('coordinates');
+        // Ambil elemen untuk menampilkan koordinat
+        var coordinatesDiv = document.getElementById('coordinates');
 
-        // // Event listener untuk mendapatkan koordinat saat kursor bergerak
-        // map.on('mousemove', function(e) {
-        //     var lat = e.latlng.lat.toFixed(5);
-        //     var lng = e.latlng.lng.toFixed(5);
-        //     coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
-        // });
+        // Event listener untuk mendapatkan koordinat saat kursor bergerak
+        map.on('mousemove', function(e) {
+            var lat = e.latlng.lat.toFixed(5);
+            var lng = e.latlng.lng.toFixed(5);
+            coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
+        });
 
-        // // Tambahkan teks default saat kursor tidak di atas peta
-        // map.on('mouseout', function() {
-        //     coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
-        // });
+        // Tambahkan teks default saat kursor tidak di atas peta
+        map.on('mouseout', function() {
+            coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
+        });
     </script>
 
 
