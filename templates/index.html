@@ -40,7 +40,7 @@
     </div>
 
 
-    <!--<div id="coordinates">Hover over the map to see coordinates.</div>-->
+    <div id="coordinates">Hover over the map to see coordinates.</div>
 
     <div id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
@@ -115,11 +115,10 @@
         const L1wall = createPolyline(
             [
                 [[0, 0], [66, 0], [66, -6], [78, -6], [78, 0], [150, 0], [150, 120], [0, 120],[0,0]],
-                [[24, 33], [24, 0]],
-                [[24, 42], [54, 42], [54, 57]],
-                [[18, 66], [54, 66]],
+                [[54,66],[54,42],[64,42]],
+                [[18, 60], [54, 60]],
                 [[54, 75], [54, 120]],
-                [[0, 42], [18, 42], [18, 66], [9, 66]],
+                [[0, 42], [18, 42], [18, 60], [9, 60]],
                 [[84, 120], [84, 96], [111, 96]],
                 [[102, 120], [102, 96]],
                 [[120, 120], [120, 96]],
@@ -157,8 +156,8 @@
 
 
         const L1pst = L.polygon(
-                [[84,0], [84,42], [150,42], [150,0]],
-            styles.unusedspace).bindTooltip("Ruang PST", {permanent: true, direction:"center", className: 'roomstooltip'});
+                [[0,0], [0,42], [18,42], [18,0]],
+            styles.footprint).bindTooltip("Ruang PST", {permanent: true, direction:"top", className: 'roomstooltip'});
 
         const L1ipds = L.polygon(
                 [[84,42], [84,84], [150,84], [150,42]],
@@ -188,17 +187,15 @@
         // Polygon pintu lantai 1
         const L1door = createPolyline(
             [
-                [[24,33], [24,42]],
-                [[18,42], [24,42]],
+
                 [[84,33], [84,42]],
                 [[84,75], [84,84]],
-                [[54,57], [54,66]],
                 [[141,42], [150,42]],
                 [[54,66], [54,75]],
                 [[132,84], [138,84]],
                 [[129,96], [120,96]],
                 [[120,96], [111,96]],
-                [[0,66], [9,66]],
+                [[0,60], [9,60]],
             ],
             styles.door
         );
@@ -253,12 +250,16 @@
     //Poligon Area Reservasi Bangku
     //IPDS
         const deskAreas = [
+            // PST
+            { coords: [[1, 1], [1, 17], [17, 17], [17, 1]], label: "pelayanan", occupant: null },
+            { coords: [[1, 25], [1, 41], [17, 41], [17, 25]], label: "pengaduan", occupant: null },
+
+            // IPDS
             { coords: [[85, 42.5], [85, 55.5], [98, 55.5], [98, 42.5]], label: "ipds-1", occupant: null },
             { coords: [[100, 42.5], [113, 42.5], [113, 55.5], [100, 55.5]], label: "ipds-2", occupant: null },
             { coords: [[115, 42.5], [128, 42.5], [128, 55.5], [115, 55.5]], label: "ipds-3", occupant: null },
             { coords: [[136.5, 56.5], [136.5, 69.5], [149.5, 69.5], [149.5, 56.5]], label: "ipds-4", occupant: null },
             { coords: [[136.5, 69.5], [136.5, 82.5], [149.5, 82.5], [149.5, 69.5]], label: "ipds-5", occupant: null },
-            { coords: [[117, 70], [117, 83], [130, 83], [130, 70]], label: "ipds-6", occupant: null },
 
             // Teknis Selatan
             { coords: [[0.5, 145], [13.5, 145], [13.5, 158], [0.5, 158]], label: "teknis-1", occupant: null },
@@ -530,19 +531,19 @@
 
 
         // Ambil elemen untuk menampilkan koordinat
-        //var coordinatesDiv = document.getElementById('coordinates');
+        var coordinatesDiv = document.getElementById('coordinates');
 
         // Event listener untuk mendapatkan koordinat saat kursor bergerak
-        //map.on('mousemove', function(e) {
-        //    var lat = e.latlng.lat.toFixed(5);
-        //    var lng = e.latlng.lng.toFixed(5);
-        //    coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
-        //});
+        map.on('mousemove', function(e) {
+            var lat = e.latlng.lat.toFixed(5);
+            var lng = e.latlng.lng.toFixed(5);
+            coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
+        });
 
         // Tambahkan teks default saat kursor tidak di atas peta
-        //map.on('mouseout', function() {
-        //    coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
-        //});
+        map.on('mouseout', function() {
+            coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
+        });
     </script>
 
 
