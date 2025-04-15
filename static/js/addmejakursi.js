@@ -7,10 +7,10 @@
 // Koordinat dan data meja
     const tables1 = [
     //PST
-        //pengunjung
-        { coords: [108, 4], imageUrl: `${staticUrl}mejakecilkanan.png`, width: 6, height: 9 },
-        //pst
-        { coords: [135, 24], imageUrl: `${staticUrl}mejapanjangatas.png`, width: 18, height: 6 },
+        //pelayanan
+        { coords: [11, 9], imageUrl: `${staticUrl}mejabawah.png`, width: 14, height: 6 },
+        //pengaduan
+        { coords: [11, 33], imageUrl: `${staticUrl}mejabawah.png`, width: 14, height: 6 },
         
    //IPDS
         //ipds1
@@ -23,9 +23,6 @@
         { coords: [140, 63], imageUrl: `${staticUrl}mejabawah.png`, width: 12, height: 6 },
         //ipds5
         { coords: [140, 76], imageUrl: `${staticUrl}mejabawah.png`, width: 12, height: 6 },
-        //ipds6
-        { coords: [123.5, 79.5], imageUrl: `${staticUrl}mejakiri.png`, width: 6, height: 12 },
-
 
         //server
         { coords: [146, 90], imageUrl: `${staticUrl}server.png`, width: 11, height: 6 },
@@ -48,10 +45,10 @@
 
     // Koordinat dan data meja
     const chairs1 = [
-        //pengunjung
-        { coords: [108, 10], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
-        //pst
-        { coords: [141, 24], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        //pelayanan
+        { coords: [4.5, 9], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        //pengaduan
+        { coords: [4.5, 33], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
 
         //ipds1
         { coords: [91, 52], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
@@ -63,8 +60,6 @@
         { coords: [146, 63], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         //ipds5
         { coords: [146, 76], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        //ipds6
-        { coords: [123.5, 73.5], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
         //server
         { coords: [140, 90], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         
