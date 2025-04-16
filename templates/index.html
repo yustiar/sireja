@@ -65,63 +65,7 @@
     <script src='{% static "js/addmejakursi.js" %}' type="text/javascript"></script>
     <script type="text/javascript">
 
-        // Koordinat titik pusat (misalnya lokasi kantor)
-        const kantorLat = -6.96898137292453;  // Ganti dengan koordinat kamu
-        const kantorLng = 111.42490437746775;
-          
-        // Fungsi hitung jarak dengan rumus haversine
-        function hitungJarak(lat1, lon1, lat2, lon2) {
-            const R = 6371e3; // radius bumi dalam meter
-            const φ1 = lat1 * Math.PI / 180;
-            const φ2 = lat2 * Math.PI / 180;
-            const Δφ = (lat2 - lat1) * Math.PI / 180;
-            const Δλ = (lon2 - lon1) * Math.PI / 180;
-
-            const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                      Math.cos(φ1) * Math.cos(φ2) *
-                      Math.sin(Δλ/2) * Math.sin(Δλ/2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-            const jarak = R * c; // dalam meter
-            return jarak;
-        }
-
-        function getUserCoordinate() {
-          return new Promise((resolve, reject) => {
-            if ("geolocation" in navigator) {
-              navigator.geolocation.getCurrentPosition(
-                (position) => {
-                  const coords = {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                  };
-                  resolve(coords);
-                },
-                (error) => {
-                  reject(`Gagal mendapatkan lokasi: ${error.message}`);
-                }
-              );
-            } else {
-              reject("Geolocation tidak didukung oleh browser ini.");
-            }
-          });
-        }
-
-        // Fungsi utama: ambil koordinat user dan hitung jarak ke kantor
-        async function hitungJarakKeKantor() {
-          try {
-            const userCoords = await getUserCoordinate();
-            const jarak = hitungJarak(
-              userCoords.latitude,
-              userCoords.longitude,
-              kantorLat,
-              kantorLng
-            );
-            console.log(`Jarak ke kantor: ${(jarak / 1000).toFixed(2)} km`);
-          } catch (error) {
-            console.error(error);
-          }
-        }
+        
 
 
 
@@ -508,21 +452,81 @@
 
 
 
+        // Koordinat titik pusat (misalnya lokasi kantor)
+        const kantorLat = -6.96898137292453;  // Ganti dengan koordinat kamu
+        const kantorLng = 111.42490437746775;
+          
+        // Fungsi hitung jarak dengan rumus haversine
+        function hitungJarak(lat1, lon1, lat2, lon2) {
+            const R = 6371e3; // radius bumi dalam meter
+            const φ1 = lat1 * Math.PI / 180;
+            const φ2 = lat2 * Math.PI / 180;
+            const Δφ = (lat2 - lat1) * Math.PI / 180;
+            const Δλ = (lon2 - lon1) * Math.PI / 180;
 
+            const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                      Math.cos(φ1) * Math.cos(φ2) *
+                      Math.sin(Δλ/2) * Math.sin(Δλ/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+            const jarak = R * c; // dalam meter
+            return jarak;
+        }
+
+        function getUserCoordinate() {
+          return new Promise((resolve, reject) => {
+            if ("geolocation" in navigator) {
+              navigator.geolocation.getCurrentPosition(
+                (position) => {
+                  resolve({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                  });
+                },
+                (error) => {
+                  reject(`Gagal mendapatkan lokasi: ${error.message}`);
+                },
+                {
+                  enableHighAccuracy: true,
+                  timeout: 10000,
+                  maximumAge: 0
+                }
+              );
+            } else {
+              reject("Geolocation tidak didukung oleh browser ini.");
+            }
+          });
+        }
+
+        // Fungsi utama: ambil koordinat user dan hitung jarak ke kantor
+        async function hitungJarakKeKantor() {
+          try {
+            const userCoords = await getUserCoordinate();
+            const jarak = hitungJarak(
+              userCoords.latitude,
+              userCoords.longitude,
+              kantorLat,
+              kantorLng
+            );
+            return jarak;
+          } catch (error) {
+            throw new Error("Gagal mendapatkan lokasi: " + error);
+          }
+        }
 
 
     // Event klik pada tombol reservasi
         $(document).on('click', '#reserveButton', async function () {
-            var tokenInput=$("#nameInput").val();
-            var deskInput=$("#deskLabel").text();
+            var tokenInput = $("#nameInput").val();
+            var deskInput = $("#deskLabel").text();
             var distanceInput;
 
             try {
-                const coords = await getUserCoordinate(); // Menunggu koordinat pengguna
-                distanceInput = hitungJarak(coords.latitude, coords.longitude, kantorLat, kantorLng);
-                console.log(`Jarak ke kantor: ${(distanceInput / 1000).toFixed(2)} km`);
+                distanceInput = await hitungJarakKeKantor();
+                alert(`Jarak ke kantor: ${(distanceInput / 1000).toFixed(2)} km`);
             } catch (error) {
-                console.log("Gagal mendapatkan lokasi: " + error);
+                alert(error.message);
+                return; // hentikan jika gagal ambil lokasi
             }
 
             $("#loading-overlay").fadeIn();
