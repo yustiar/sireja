@@ -523,7 +523,7 @@
 
             try {
                 distanceInput = await hitungJarakKeKantor();
-                alert(`Jarak ke kantor: ${(distanceInput / 1000).toFixed(2)} km`);
+                alert(`Jarak ke kantor: ${(distanceInput).toFixed(2)}m`);
             } catch (error) {
                 alert(error.message);
                 return; // hentikan jika gagal ambil lokasi
