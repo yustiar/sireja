@@ -520,18 +520,26 @@
             var tokenInput = $("#nameInput").val();
             var deskInput = $("#deskLabel").text();
             var distanceInput;
+            var userCoords;
 
             try {
-                distanceInput = await hitungJarakKeKantor();
+                userCoords = await getUserCoordinate(); // ambil koordinat
+                distanceInput = hitungJarak(
+                    userCoords.latitude,
+                    userCoords.longitude,
+                    kantorLat,
+                    kantorLng
+
+                );
+
                 alert(
                     `Jarak ke kantor: ${distanceInput.toFixed(2)} m\n` +
-                    `Koordinat Anda: (${coords.latitude.toFixed(6)}, ${coords.longitude.toFixed(6)})`
+                    `Koordinat Anda: (${userCoords.latitude.toFixed(6)}, ${userCoords.longitude.toFixed(6)})`
                 );
             } catch (error) {
                 alert(error.message);
                 return; // hentikan jika gagal ambil lokasi
             }
-
 
             $("#loading-overlay").fadeIn();
             $.ajax({
