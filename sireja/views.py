@@ -63,7 +63,7 @@ def reserveDesk(request):
         # Cek jika jarak lebih dari 75 km
         if distance > 75:
             return JsonResponse({
-                'message': 'Anda berada diluar jangkauan kantor',
+                'message': 'Anda berada di luar jangkauan kantor (' + "{:.2f}".format(distance) + ' meter)',
                 'status': 'error',
                 'penghuni_data': penghuni_data  # Pastikan penghuni_data didefinisikan sebelumnya
             })
