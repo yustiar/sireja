@@ -523,11 +523,15 @@
 
             try {
                 distanceInput = await hitungJarakKeKantor();
-                alert(`Jarak ke kantor: ${(distanceInput).toFixed(2)}m`);
+                alert(
+                    `Jarak ke kantor: ${distanceInput.toFixed(2)} m\n` +
+                    `Koordinat Anda: (${coords.latitude.toFixed(6)}, ${coords.longitude.toFixed(6)})`
+                );
             } catch (error) {
                 alert(error.message);
                 return; // hentikan jika gagal ambil lokasi
             }
+
 
             $("#loading-overlay").fadeIn();
             $.ajax({
