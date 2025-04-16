@@ -52,7 +52,22 @@ def reserveDesk(request):
     
     token = request.POST.get('token', '').strip().lower()
     desk = request.POST.get('desk', '').strip().lower()
-    
+    distance = request.POST.get('distance', '').strip()
+
+    if distance:  # Pastikan 'distance' ada dan tidak kosong
+        try:
+            distance = float(distance)  # Ubah 'distance' ke tipe integer
+        except ValueError:
+            return JsonResponse({'message': 'Jarak tidak valid', 'status': 'error', 'penghuni_data': penghuni_data})
+
+        # Cek jika jarak lebih dari 75 km
+        if distance > 75:
+            return JsonResponse({
+                'message': 'Anda berada diluar jangkauan kantor',
+                'status': 'error',
+                'penghuni_data': penghuni_data  # Pastikan penghuni_data didefinisikan sebelumnya
+            })
+            
     
     now = timezone.now().astimezone(ZoneInfo("Asia/Jakarta"))
     if not (7 <= now.hour < 13):
