@@ -116,8 +116,6 @@
     //Teknis Meja Katim
         //teknis1
         { coords: [7, 155], imageUrl: `${staticUrl}mejakiri.png`, width: 6, height: 12 },
-        //teknis2
-        { coords: [7, 161], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
         //teknis3
         { coords: [4, 180], imageUrl: `${staticUrl}mejaatas.png`, width: 12, height: 6 },
         //teknis4
@@ -126,8 +124,6 @@
         { coords: [4, 213], imageUrl: `${staticUrl}mejaatas.png`, width: 12, height: 6 },
         //teknis6
         { coords: [4, 228], imageUrl: `${staticUrl}mejaatas.png`, width: 12, height: 6 },
-        //teknis7
-        { coords: [7, 247], imageUrl: `${staticUrl}mejakiri.png`, width: 6, height: 12 },
         //teknis8
         { coords: [7, 253], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
 
@@ -224,12 +220,10 @@
     //TEKNIS
         //Horizontal selatan
         { coords: [7, 149], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
-        { coords: [7, 167], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
         { coords: [10, 180], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         { coords: [10, 195], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         { coords: [10, 213], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         { coords: [10, 228], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        { coords: [7, 241], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
         { coords: [7, 259], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
 
     //Cubicle Teknis
