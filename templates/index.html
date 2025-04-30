@@ -38,9 +38,8 @@
             </div>
         </div>
     </div>
-<p></p>
 
-    <div id="coordinates">Hover over the map to see coordinates.</div>
+
 
     <div id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
@@ -178,6 +177,7 @@
                 [[0,144], [0,264], [54,264], [54,180], [84,180], [84,144]],
             styles.footprint).bindTooltip("Ruang Teknis", {permanent: true, direction:"center", className: 'roomstooltip'});
 
+        const tooltipPolygons = [L1pst, L1ipds, L2tu, L2teknis];
 
         const L1unused = L.polygon(
                 [
@@ -343,7 +343,7 @@
                 .bindTooltip(tooltipContent, {
                     permanent: false,
                     sticky: true,
-                    direction: "right",
+                    direction: "center",
                     offset: L.point(0, 0),
                     className: 'tooltipclass',
                     pane: 'tooltipPane'
@@ -381,7 +381,7 @@
                         this.bindPopup(content).openPopup();
                     }
                 });
-
+            polygon.deskData = desk;
             deskLayer.addLayer(polygon);
         });
 
@@ -434,6 +434,28 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Collapsible Tambahan untuk Pengaturan -->
+                    <div class="card mt-2">
+                        <div class="card-header p-1 d-flex align-items-center">
+                            <p class="mb-0 fw-bold">Pengaturan Peta</p>
+                            <button class="btn btn-sm btn-outline-secondary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#settingContent" aria-expanded="false" aria-controls="settingContent">
+                                ⚙️
+                            </button>
+                        </div>
+                        <div id="settingContent" class="collapse">
+                            <div class="card-body">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="toggleLabel">
+                                    <label class="form-check-label" for="toggleLabel">Tampilkan Label Ruangan</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="togglenamapegawai">
+                                    <label class="form-check-label" for="togglenamapegawai">Tampilkan Label Nama Pegawai</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 `;
         
                 return div;
@@ -446,6 +468,44 @@
         
         L.control.legend = function(opts) { return new L.Control.legend(opts); }
         L.control.legend({ position: 'topright' }).addTo(map);
+        
+        document.getElementById('toggleLabel').checked = true;
+        tooltipPolygons.forEach(polygon => polygon.openTooltip());
+        
+        document.getElementById('toggleLabel').addEventListener('change', function (e) {
+            tooltipPolygons.forEach(polygon => {
+                if (e.target.checked) {
+                    polygon.openTooltip(); // Tampilkan tooltip
+                } else {
+                    polygon.closeTooltip(); // Sembunyikan tooltip
+                }
+            });
+        });
+
+
+
+
+        document.getElementById('togglenamapegawai').addEventListener('change', function (e) {
+            deskLayer.eachLayer(polygon => {
+                const desk = polygon.deskData;
+                const tooltipContent = desk.occupant === null 
+                    ? desk.label 
+                    : `${desk.label} : <strong>${desk.occupant}</strong>`;
+
+                polygon.unbindTooltip();
+
+                polygon.bindTooltip(tooltipContent, {
+                    permanent: e.target.checked,
+                    sticky: true,
+                    direction: "center",
+                    offset: L.point(0, 0),
+                    className: 'tooltipclass',
+                    pane: 'tooltipPane'
+                });
+            });
+        });
+
+
 
 
 
@@ -619,22 +679,22 @@
         }
 
 
-        // Ambil elemen untuk menampilkan koordinat
-        var coordinatesDiv = document.getElementById('coordinates');
+        // // Ambil elemen untuk menampilkan koordinat
+        // var coordinatesDiv = document.getElementById('coordinates');
 
-        // Event listener untuk mendapatkan koordinat saat kursor bergerak
-        map.on('mousemove', function(e) {
-            var lat = e.latlng.lat.toFixed(5);
-            var lng = e.latlng.lng.toFixed(5);
-            coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
-        });
+        // // Event listener untuk mendapatkan koordinat saat kursor bergerak
+        // map.on('mousemove', function(e) {
+        //     var lat = e.latlng.lat.toFixed(5);
+        //     var lng = e.latlng.lng.toFixed(5);
+        //     coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
+        // });
 
-        // Tambahkan teks default saat kursor tidak di atas peta
-        map.on('mouseout', function() {
-            coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
-        });
+        // // Tambahkan teks default saat kursor tidak di atas peta
+        // map.on('mouseout', function() {
+        //     coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
+        // });
     </script>
 
 
 </body>
-</html>
+</html> 
