@@ -415,7 +415,7 @@
         
                 div.innerHTML = `
                     <div class="card">
-                        <div class="card-header p-1 d-flex align-items-center">
+                        <div class="card-header p-1 d-flex align-items-center bg-yellow text-dark">
                             <p class="mb-0 fw-bold">Sireja (Sistem Reservasi Meja) BPS Kabupaten Blora</p>
                             <button class="btn btn-sm btn-outline-primary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#legendContent" aria-expanded="true" aria-controls="legendContent">
                                 ▼
@@ -437,14 +437,14 @@
 
                     <!-- Collapsible Tambahan untuk Pengaturan -->
                     <div class="card mt-2">
-                        <div class="card-header p-1 d-flex align-items-center">
+                        <div class="card-header p-1 d-flex align-items-center bg-yellow text-dark">
                             <p class="mb-0 fw-bold">Pengaturan Peta</p>
-                            <button class="btn btn-sm btn-outline-secondary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#settingContent" aria-expanded="false" aria-controls="settingContent">
-                                ⚙️
+                            <button class="btn btn-sm btn-outline-primary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#settingContent" aria-expanded="false" aria-controls="settingContent">
+                                ▼
                             </button>
                         </div>
                         <div id="settingContent" class="collapse">
-                            <div class="card-body">
+                            <div class="card-body p-2">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="toggleLabel">
                                     <label class="form-check-label" for="toggleLabel">Tampilkan Label Ruangan</label>
