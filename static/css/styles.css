@@ -26,16 +26,10 @@ html, body {
     border: 0px;
     box-shadow: 0px ;
     padding: 4px 4px;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 
-
-#coordinates {
-    margin-top: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-}
 
 
 
@@ -78,9 +72,11 @@ html, body {
 .map-legend {
     background: rgba(255, 255, 255, 0.9) !important;
     font-size: 12px !important;
-    border-radius: 8px !important;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2) !important;
     max-width: 250px !important;
     z-index: 1000 !important;
 }
 
+.bg-yellow {
+  background-color: #fffbc9 !important;
+}
