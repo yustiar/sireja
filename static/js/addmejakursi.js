@@ -109,9 +109,9 @@
 
     //Tata Usaha setengah cubicle
         //tu6
-        { coords: [98, 168], imageUrl: `${staticUrl}cubicle1kosong.png`, width: 12, height: 12 },
+        { coords: [98, 168], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
         //tu7
-        { coords: [98, 180], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
+        { coords: [98, 180], imageUrl: `${staticUrl}cubicle2kosong.png`, width: 12, height: 12 },
 
 
 
