@@ -94,22 +94,22 @@
         //tub
         { coords: [129, 192], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 6 },
         //tu2 cubicle
-        { coords: [132, 204], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },
+        { coords: [132, 204], imageUrl: `${staticUrl}cubicle4kosong.png`, width: 12, height: 12 },
         //tu3 cubicle
-        { coords: [132, 216], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [132, 216], imageUrl: `${staticUrl}cubicle3kosong.png`, width: 12, height: 12 },
         //tu4 cubicle
-        { coords: [120, 216], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
+        { coords: [120, 216], imageUrl: `${staticUrl}cubicle2kosong.png`, width: 12, height: 12 },
         //tu5 cubicle
         { coords: [120, 204], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
 
         //tuc
-        { coords: [123, 192], imageUrl: `${staticUrl}mejakecilbawah.png`, width: 9, height: 6 },
+        { coords: [123, 192], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 6 },
         //tud
         { coords: [123, 183], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 6 },
 
     //Tata Usaha setengah cubicle
         //tu6
-        { coords: [98, 168], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
+        { coords: [98, 168], imageUrl: `${staticUrl}cubicle1kosong.png`, width: 12, height: 12 },
         //tu7
         { coords: [98, 180], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
 
@@ -197,13 +197,13 @@
 
     //Cubicle Tata Usaha
         //tu2 cubicle
-        { coords: [134, 201], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [135, 201], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         //tu3 cubicle
-        { coords: [134, 219], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [135, 219], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         //tu4 cubicle
-        { coords: [118, 219], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [117, 219], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         //tu5 cubicle
-        { coords: [118, 201], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [117, 201], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
 
     //meja pkl
         //tuc
@@ -213,9 +213,9 @@
 
     //meja bendahara ppk
         //tu6
-        { coords: [96, 183], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [97, 183], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         //tu7
-        { coords: [96, 165], imageUrl: `${staticUrl}kursikanan.png`, width: 5, height: 5 },
+        { coords: [97, 165], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
 
     //TEKNIS
         //Horizontal selatan
