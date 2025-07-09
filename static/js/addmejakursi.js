@@ -100,10 +100,10 @@
         //tu4 cubicle
         { coords: [120, 216], imageUrl: `${staticUrl}cubicle2kosong.png`, width: 12, height: 12 },
         //tu5 cubicle
-        { coords: [120, 204], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
+        { coords: [120, 204], imageUrl: `${staticUrl}cubicle1kosong.png`, width: 12, height: 12 },
 
         //tuc
-        { coords: [123, 192], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 6 },
+        { coords: [123, 192], imageUrl: `${staticUrl}mejakecilbawah.png`, width: 9, height: 6 },
         //tud
         { coords: [123, 183], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 6 },
 
@@ -135,31 +135,31 @@
         //teknis9
         { coords: [27, 152], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
         //teknis10
-        { coords: [27, 164], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
+        { coords: [27, 164], imageUrl: `${staticUrl}cubicle2kosong.png`, width: 12, height: 12 },
         //teknis11
-        { coords: [39, 164], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [39, 164], imageUrl: `${staticUrl}cubicle3kosong.png`, width: 12, height: 12 },
         //teknis12
         { coords: [39, 152], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },
 
     //Cubicle Teknis Group 2
         //teknis13
-        { coords: [27, 180], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
+        { coords: [27, 180], imageUrl: `${staticUrl}cubicle1kosong.png`, width: 12, height: 12 },
         //teknis14
-        { coords: [27, 192], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
+        { coords: [27, 192], imageUrl: `${staticUrl}cubicle2kosong.png`, width: 12, height: 12 },
         //teknis15
-        { coords: [39, 192], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [39, 192], imageUrl: `${staticUrl}cubicle3kosong.png`, width: 12, height: 12 },
         //teknis16
         { coords: [39, 180], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },  
 
     //Cubicle Teknis Group 3
         //teknis17
-        { coords: [27, 216], imageUrl: `${staticUrl}cubicle1.png`, width: 12, height: 12 },
+        { coords: [27, 216], imageUrl: `${staticUrl}cubicle1kosong.png`, width: 12, height: 12 },
         //teknis18
         { coords: [27, 228], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
         //teknis19
         { coords: [39, 228], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
         //teknis20
-        { coords: [39, 216], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },  
+        { coords: [39, 216], imageUrl: `${staticUrl}cubicle4kosong.png`, width: 12, height: 12 },  
     
     //Cubicle Teknis Group 4
         //teknis21
@@ -167,7 +167,7 @@
         //teknis22
         { coords: [27, 256], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
         //teknis23
-        { coords: [39, 256], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [39, 256], imageUrl: `${staticUrl}cubicle3kosong.png`, width: 12, height: 12 },
         //teknis24
         { coords: [39, 244], imageUrl: `${staticUrl}cubicle4.png`, width: 12, height: 12 },    
     ];
