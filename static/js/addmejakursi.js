@@ -195,15 +195,15 @@
         //tub
         { coords: [135, 192], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
-    //Cubicle Tata Usaha
+    //KURSI Cubicle Tata Usaha
         //tu2 cubicle
-        { coords: [135, 201], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [135, 202], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         //tu3 cubicle
-        { coords: [135, 219], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [135, 218], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         //tu4 cubicle
-        { coords: [117, 219], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [117, 218], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         //tu5 cubicle
-        { coords: [117, 201], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [117, 202], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
 
     //meja pkl
         //tuc
@@ -213,9 +213,9 @@
 
     //meja bendahara ppk
         //tu6
-        { coords: [97, 183], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [95, 182], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         //tu7
-        { coords: [97, 165], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [95, 166], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
 
     //TEKNIS
         //Horizontal selatan
@@ -228,10 +228,10 @@
 
     //Cubicle Teknis
         //Cubicle Teknis Grup 1
-        { coords: [24, 149], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [24, 150], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         { coords: [24, 166], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
         { coords: [42, 166], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
-        { coords: [42, 149], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
+        { coords: [42, 150], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
 
         //Cubicle Teknis Grup 2
         { coords: [24, 178], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
