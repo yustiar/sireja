@@ -113,9 +113,12 @@
         //tu7
         { coords: [98, 180], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
 
-    //Teknis Meja Katim
+
+
+        
+    //TEKNIS Meja SELATAN
         //teknis1
-        { coords: [7, 155], imageUrl: `${staticUrl}mejakiri.png`, width: 6, height: 12 },
+        { coords: [7, 155], imageUrl: `${staticUrl}mejakirikosong.png`, width: 6, height: 12 },
         //teknis3
         { coords: [4, 180], imageUrl: `${staticUrl}mejaatas.png`, width: 12, height: 6 },
         //teknis4
@@ -125,7 +128,7 @@
         //teknis6
         { coords: [4, 228], imageUrl: `${staticUrl}mejaatas.png`, width: 12, height: 6 },
         //teknis8
-        { coords: [7, 253], imageUrl: `${staticUrl}mejakanan.png`, width: 6, height: 12 },
+        { coords: [7, 253], imageUrl: `${staticUrl}mejakanankosong.png`, width: 6, height: 12 },
 
 
     //Cubicle Teknis Group 1
