@@ -157,7 +157,7 @@
         //teknis18
         { coords: [27, 228], imageUrl: `${staticUrl}cubicle2.png`, width: 12, height: 12 },
         //teknis19
-        { coords: [39, 228], imageUrl: `${staticUrl}cubicle3.png`, width: 12, height: 12 },
+        { coords: [39, 228], imageUrl: `${staticUrl}cubicle3kosong.png`, width: 12, height: 12 },
         //teknis20
         { coords: [39, 216], imageUrl: `${staticUrl}cubicle4kosong.png`, width: 12, height: 12 },  
     
@@ -267,3 +267,4 @@
         const overlay = L.imageOverlay(imageUrl, bounds, { pane: 'chairPane' });
         overlay.addTo(L1chair);
     });
+
