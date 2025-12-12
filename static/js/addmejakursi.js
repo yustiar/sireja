@@ -8,9 +8,30 @@
     const tables1 = [
     //PST
         //pelayanan
-        { coords: [11, 9], imageUrl: `${staticUrl}mejabawah.png`, width: 14, height: 6 },
+        { coords: [11, 9], imageUrl: `${staticUrl}mejabawah.png`, width: 9, height: 6 },
         //pengaduan
-        { coords: [11, 33], imageUrl: `${staticUrl}mejabawah.png`, width: 14, height: 6 },
+        { coords: [11, 33], imageUrl: `${staticUrl}mejabawah.png`, width: 9, height: 6 },
+
+   //PENGOLAHAN
+        //pengolahan1
+        { coords: [95, 4], imageUrl: `${staticUrl}mejakecilkanan.png`, width: 5, height: 9 },
+        //pengolahan2
+        { coords: [105, 4], imageUrl: `${staticUrl}mejakecilkanan.png`, width: 5, height: 9 },
+        //pengolahan3
+        { coords: [115, 4], imageUrl: `${staticUrl}mejakecilkanan.png`, width: 5, height: 9 },
+        //pengolahan4
+        { coords: [125, 4], imageUrl: `${staticUrl}mejakosongh.png`, width: 5, height: 9 },
+        //pengolahan5
+        { coords: [135, 4], imageUrl: `${staticUrl}mejakosongh.png`, width: 5, height: 9 },
+        //pengolahan6
+        { coords: [146.5, 21], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 4.5 },
+        //pengolahan7
+        { coords: [146.5, 31], imageUrl: `${staticUrl}mejakosongh.png`, width: 9, height: 4.5 },
+
+        //pengolahan8
+        { coords: [121.5, 30], imageUrl: `${staticUrl}mejakosongv.png`, width: 5, height: 9 },
+        //pengolahan9
+        { coords: [106.5, 30], imageUrl: `${staticUrl}mejakosongv.png`, width: 5, height: 12 },
         
    //IPDS
         //ipds1
@@ -62,6 +83,17 @@
         { coords: [146, 76], imageUrl: `${staticUrl}kursibawah.png`, width: 5, height: 5 },
         //server
         { coords: [140, 90], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+
+        //pengolahan
+        { coords: [95, 9.5], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [105, 9.5], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [115, 9.5], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [125, 9.5], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [135, 9.5], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [141.5, 21], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [141.5, 31], imageUrl: `${staticUrl}kursiatas.png`, width: 5, height: 5 },
+        { coords: [121.5, 36], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
+        { coords: [106.5, 36], imageUrl: `${staticUrl}kursikiri.png`, width: 5, height: 5 },
         
     ];
 
@@ -267,4 +299,5 @@
         const overlay = L.imageOverlay(imageUrl, bounds, { pane: 'chairPane' });
         overlay.addTo(L1chair);
     });
+
 
