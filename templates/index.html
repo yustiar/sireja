@@ -170,6 +170,10 @@
                 [[84,42], [84,84], [150,84], [150,42]],
             styles.footprint).bindTooltip("Ruang IPDS", {permanent: true, direction:"center", className: 'roomstooltip'});
 
+        const L1pengolahan = L.polygon(
+                [[84,0], [84,42], [150,42], [150,0]],
+            styles.footprint).bindTooltip("Ruang Pengolahan", {permanent: true, direction:"bottom", className: 'roomstooltip'});
+
         const L2tu = L.polygon(
                 [[84,144], [84,228], [150,228], [150,144]],
             styles.footprint).bindTooltip("Ruang Tata Usaha", {permanent: true, direction:"left", className: 'roomstooltip'});
@@ -179,7 +183,7 @@
             styles.footprint).bindTooltip("Ruang Teknis", {permanent: true, direction:"center", className: 'roomstooltip'});
 
 
-        const L1unused = L.polygon(
+         const L1unused = L.polygon(
                 [
                     [[84,0], [84,42], [150,42], [150,0]],
                     [[0,0], [0,120], [150,120], [150,96], [132,96], [132,84], [84,84], [84,0]],
@@ -650,4 +654,5 @@
 
 </body>
 </html>
+
 
