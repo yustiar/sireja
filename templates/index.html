@@ -21,7 +21,7 @@
 
 <body>      
     <!-- Modal -->
-
+    <div id="coordinates"></div>
     <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -45,7 +45,8 @@
         <div class="spinner"></div>
     </div>
 
-    <div id="map"></div>
+    <div id="map">
+    
 
     <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
@@ -167,7 +168,11 @@
 
         const L1ipds = L.polygon(
                 [[84,42], [84,84], [150,84], [150,42]],
-            styles.footprint).bindTooltip("Ruang TI", {permanent: true, direction:"center", className: 'roomstooltip'});
+            styles.footprint).bindTooltip("Ruang TI", {permanent: true, direction:"top", className: 'roomstooltip'});
+
+        const L1pengolahan = L.polygon(
+                [[84,0], [84,42], [150,42], [150,0]],
+            styles.footprint).bindTooltip("Ruang Pengolahan", {permanent: true, direction:"bottom", className: 'roomstooltip'});
 
         const L2tu = L.polygon(
                 [[84,144], [84,228], [150,228], [150,144]],
@@ -177,7 +182,7 @@
                 [[0,144], [0,264], [54,264], [54,180], [84,180], [84,144]],
             styles.footprint).bindTooltip("Ruang Teknis", {permanent: true, direction:"center", className: 'roomstooltip'});
 
-        const tooltipPolygons = [L1pst, L1ipds, L2tu, L2teknis];
+        const tooltipPolygons = [L1pst, L1ipds, L1pengolahan, L2tu, L2teknis];
 
         const L1unused = L.polygon(
                 [
@@ -228,7 +233,7 @@
 
 
          // Gabungan layer lantai 1
-        const L1 = L.layerGroup([L1footprint, L1unused, L1pst, L1ipds, L1door, L1wall, L1table, L1chair,
+        const L1 = L.layerGroup([L1footprint, L1unused, L1pst, L1ipds, L1pengolahan, L1door, L1wall, L1table, L1chair,
                         ]);
         const L2 = L.layerGroup([L2footprint, L2unused, L2tu, L2teknis, L2door, L2wall, L2table, L2chair,]);
 
@@ -267,6 +272,17 @@
             { coords: [[115, 42.5], [128, 42.5], [128, 55.5], [115, 55.5]], label: "ipds-3", occupant: null },
             { coords: [[136.5, 56.5], [136.5, 69.5], [149.5, 69.5], [149.5, 56.5]], label: "ipds-4", occupant: null },
             { coords: [[136.5, 69.5], [136.5, 82.5], [149.5, 82.5], [149.5, 69.5]], label: "ipds-5", occupant: null },
+
+            //PENGOLAHAN
+            { coords: [[90, 1], [90, 13], [100, 13], [100, 1]], label: "pengolahan-1", occupant: null },
+            { coords: [[100, 1], [100, 13], [110, 13], [110, 1]], label: "pengolahan-2", occupant: null },
+            { coords: [[110, 1], [110, 13], [120, 13], [120, 1]], label: "pengolahan-3", occupant: null },
+            { coords: [[120, 1], [120, 13], [130, 13], [130, 1]], label: "pengolahan-4", occupant: null },
+            { coords: [[130, 1], [130, 13], [140, 13], [140, 1]], label: "pengolahan-5", occupant: null },
+            { coords: [[138, 16], [138, 26], [149, 26], [149, 16]], label: "pengolahan-6", occupant: null },
+            { coords: [[138, 26], [138, 36], [149, 36], [149, 26]], label: "pengolahan-7", occupant: null },
+            { coords: [[115, 27], [115, 40], [128, 40], [128, 27]], label: "pengolahan-8", occupant: null },
+            { coords: [[100, 27], [100, 40], [113, 40], [113, 27]], label: "pengolahan-9", occupant: null },
 
             // Teknis Selatan
             { coords: [[0.5, 145], [13.5, 145], [13.5, 158], [0.5, 158]], label: "teknis-1", occupant: null },
@@ -314,12 +330,12 @@
 
             ];
         
-            const penghuniData = {{ penghuni_data|safe }};
-            deskAreas.forEach(area => {
-                if (penghuniData[area.label]) {
-                    area.occupant = penghuniData[area.label]; // Menambahkan penghuni ke dalam deskArea
-                }
-            });
+            // const penghuniData = {{ penghuni_data|safe }};
+            // deskAreas.forEach(area => {
+            //     if (penghuniData[area.label]) {
+            //         area.occupant = penghuniData[area.label]; // Menambahkan penghuni ke dalam deskArea
+            //     }
+            // });
 
   
         
@@ -679,20 +695,20 @@
         }
 
 
-        // // Ambil elemen untuk menampilkan koordinat
-        // var coordinatesDiv = document.getElementById('coordinates');
+        // Ambil elemen untuk menampilkan koordinat
+        var coordinatesDiv = document.getElementById('coordinates');
 
-        // // Event listener untuk mendapatkan koordinat saat kursor bergerak
-        // map.on('mousemove', function(e) {
-        //     var lat = e.latlng.lat.toFixed(5);
-        //     var lng = e.latlng.lng.toFixed(5);
-        //     coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
-        // });
+        // Event listener untuk mendapatkan koordinat saat kursor bergerak
+        map.on('mousemove', function(e) {
+            var lat = e.latlng.lat.toFixed(5);
+            var lng = e.latlng.lng.toFixed(5);
+            coordinatesDiv.innerHTML = `Latitude: ${lat}, Longitude: ${lng}`;
+        });
 
-        // // Tambahkan teks default saat kursor tidak di atas peta
-        // map.on('mouseout', function() {
-        //     coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
-        // });
+        // Tambahkan teks default saat kursor tidak di atas peta
+        map.on('mouseout', function() {
+            coordinatesDiv.innerHTML = 'Hover over the map to see coordinates.';
+        });
     </script>
 
 
